@@ -1,0 +1,26 @@
+{
+  "lesson": "L2.1",
+  "preflight": {
+    "file_name": "l2_1_sample_receipt.png",
+    "file_size_kb": 12.81,
+    "width": 900,
+    "height": 620,
+    "megapixels": 0.56,
+    "mode": "RGB",
+    "format": "PNG",
+    "quality_check": "pass"
+  },
+  "case": {
+    "case_name": "sample_receipt",
+    "input_type": "scanned_document",
+    "visual_layout_matters": true,
+    "text_can_be_extracted_first": false,
+    "contains_sensitive_data": false,
+    "image_quality": "pass",
+    "reason": "The task may depend on receipt layout and handwritten note interpretation."
+  },
+  "recommendation": {
+    "route": "multimodal_candidate",
+    "reason": "Visual layout or image content is needed for the task."
+  }
+}

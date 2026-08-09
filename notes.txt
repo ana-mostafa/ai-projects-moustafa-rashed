@@ -1,0 +1,73 @@
+#Key learning:
+ #Gemini API allows applications to communicate with AI models.
+ #Tokens represent the amount of information processed by the model.
+ #Latency measures response time.
+ #Token usage affects cost and architecture decisions.
+#Transformer models use attention mechanisms to understand relationships between tokens rather than processing text sequentially.
+
+#Attention allows models to consider context, which enables capabilities like generation, translation, and summarisation.
+
+#As AI developers, we need to consider:
+# token usage and cost
+# latency
+# context window limitations
+# hallucination risks
+# adding architecture around models for reliability
+
+AI architectures are chosen based on the task.
+
+- Generative transformer models:
+  Used for creating text, code and conversations.
+
+- Encoder models:
+  Used for understanding text, classification and semantic search.
+
+- Diffusion models:
+  Used for generating images and other media.
+
+- Mixture of Experts:
+  Improves efficiency by activating specialist parts of a large model.
+
+AI developers do not usually build these architectures from scratch.
+They need to understand their strengths, limitations and when to use each one.
+
+Token volume is an architectural constraint because every AI request consumes resources.
+
+AI developers must consider:
+- input tokens
+- output tokens
+- latency
+- scalability
+- model choice
+
+At scale, systems can be improved by:
+- reducing unnecessary prompt length
+- using retrieval (RAG) instead of sending large documents
+- limiting output size
+- choosing appropriate models
+- managing conversation history
+
+The goal is not just making an AI system work, but making it efficient and reliable in production.
+
+Model selection is an architectural decision.
+
+Standard instruct models:
+- Fast and cost efficient
+- Best default for production systems
+
+Frontier models:
+- Higher capability
+- Used for complex tasks where quality matters
+
+Reasoning models:
+- Better for multi-step problems
+- Slower and more expensive
+
+Base models:
+- Raw pretrained models
+- Rarely used directly in applications
+
+Post-training makes models controllable by improving instruction following,
+safety and consistency.
+
+AI developers should choose the smallest model that reliably solves the problem.
