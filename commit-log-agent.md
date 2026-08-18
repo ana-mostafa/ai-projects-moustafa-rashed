@@ -254,3 +254,175 @@ Please draft:
 5. Two questions I should discuss with my instructor or line manager.
 
 Before drafting, ask me up to three questions if any important detail is missing. Do not invent outputs, screenshots, links, test results, workplace systems or confidential details.
+
+## L1.3 - Agent Control Map Evidence
+
+Use the Commit Log Agent rules above. Help me document the Agent Control Map evidence I created in L1.3.
+
+Context:
+
+- Notebook name:
+l1_3_agent_control_map.ipynb
+
+- What my agent loop does:
+A controlled AI agent loop that receives a service request, uses Gemini Flash to propose a classification and action, allows Python to control tool usage, creates a review package and requires human review before action.
+
+- The execution trace file:
+l1_3_agent_execution_trace.json
+
+- The visual evidence created:
+l1_3_agent_control_map.png
+
+- The approved tool or knowledge source:
+retrieve_guidance() using the approved_guidance dictionary.
+
+- The fallback route:
+Unknown topics, low-confidence decisions or sensitive requests are routed to human review.
+
+- The human review point:
+The generated recommendation is reviewed by a manager or staff member before any action is taken.
+
+- One control test I performed:
+Tested different service requests including delivery delay, unknown topics, account access and ambiguous requests.
+
+- What happened:
+The system retrieved approved guidance for supported requests and used fallback routes when the request was unclear or unsupported.
+
+- Evidence I can safely share:
+Clean notebook, execution trace JSON and Agent Control Map PNG.
+
+- Anything I must keep private:
+API keys, real customer data and confidential workplace information.
+
+Please draft:
+
+1. A concise Commit Log entry.
+2. A GitHub-ready summary.
+3. A suggested commit message.
+4. One failure mode and one practical control.
+5. Two questions to discuss with my instructor or line manager.
+
+Do not invent results, screenshots or links.
+
+## L2.1 - Multimodal Decision Gate Review
+
+Use the Commit Log Agent rules above. Help me review and document my L2.1 multimodal decision gate.
+
+Context:
+- Notebook filename or link:
+- Sample image filename or link:
+- Modality decision JSON filename or link:
+- Route recommended for the sample case:
+- Other routes I tested:
+- Evidence that visual layout matters or does not matter:
+- Evidence that OCR-first was considered:
+- Evidence that sensitive data handling was considered:
+- Evidence I can safely share:
+- Evidence I must keep private:
+
+Please draft:
+1. A short evidence review: does my decision justify text-only, OCR-first, multimodal or human review?
+2. A concise Commit Log entry for this lesson.
+3. A GitHub-ready README note.
+4. A suggested commit message.
+5. Two questions I should discuss with my instructor or line manager before choosing a platform.
+
+Before drafting, ask me up to three questions if any important detail is missing. Do not invent links, screenshots, repository paths, test results, workplace systems, risks or confidential details.
+
+## L2.1 - Multimodal Decision Gate
+
+Built a multimodal decision gate to determine the safest AI processing route before selecting a model.
+
+Created a safe synthetic receipt image and added a preflight inspection step to check image quality and metadata. The decision gate used Python rules to recommend between text-only, OCR-first, multimodal processing or human review.
+
+Evidence created:
+- l2_1_multimodal_decision_gate.ipynb
+- l2_1_sample_receipt.png
+- l2_1_modality_decision.json
+
+Testing completed:
+- plain_support_email → text_only
+- clean_scanned_form → ocr_first
+- poor_quality_photo → human_review_or_rescan
+- identity_document → human_review_or_approved_route
+
+Key learning:
+Multimodal processing should only be considered when visual information affects the task outcome. The decision gate ensures image quality, OCR suitability and sensitive data handling are considered before choosing an AI route.
+## L2.2 - Platform Shortlist Review
+
+Use the Commit Log Agent rules above. Help me review and document my L2.2 platform shortlist.
+
+Context:
+- L2.1 modality decision file or link:
+- Recommended route from L2.1:
+- Shortlist file or link:
+- Candidates considered:
+- Candidates kept:
+- Candidates rejected:
+- Candidates marked needs more evidence:
+- Sources checked:
+- Possible disqualifiers:
+- Questions still open:
+- Evidence I can safely share:
+- Evidence I must keep private:
+
+Please draft:
+1. A short evidence review: does my shortlist follow from the L2.1 route?
+2. A concise Commit Log entry for this lesson.
+3. A GitHub-ready README note.
+4. A suggested commit message.
+5. Three questions I should answer before building the L2.3 Platform Evaluation Matrix.
+
+Before drafting, ask me up to three questions if any important detail is missing. Do not invent sources, links, policies, prices, test results, workplace systems, approvals or confidential details.
+
+## L2.3 - Platform Evaluation Matrix Review
+
+Use the Commit Log Agent rules above. Help me review and document my L2.3 Platform Evaluation Matrix and recommendation.
+
+Context:
+- L2.1 modality decision file or link:
+- L2.2 shortlist file or link:
+- Matrix file or link:
+- Recommendation file or link:
+- Candidates evaluated:
+- Hard constraints:
+- Criteria and weights used:
+- Highest-scoring option:
+- Recommended option:
+- Trade-off accepted:
+- Reversal point:
+- Sources checked:
+- Evidence I can safely share:
+- Evidence I must keep private:
+
+Please draft:
+1. A short evidence review: does the recommendation follow from the matrix, hard constraints and sensitivity check?
+2. A concise Commit Log entry for this lesson.
+3. A GitHub-ready README note.
+4. A suggested commit message.
+5. Three questions I should discuss with my coach, instructor or line manager before implementation.
+
+Before drafting, ask me up to three questions if any important detail is missing. Do not invent scores, sources, links, policies, prices, platform capabilities, workplace systems, approvals or confidential details.
+
+## L3.1 — First OpenAI API Call
+
+**Model:** `gpt-4o-mini`
+
+I set up the Unit 3 Python environment with the `openai` and `python-dotenv` packages, configured the `OPENAI_API_KEY` through the existing `.env` file, and added `.env` to `.gitignore` to keep the credential out of version control. I implemented the OpenAI Chat Completions API call with a system prompt, user message, temperature and maximum output limit, and added code to extract the response and token usage. The live API request was not completed because the API account returned `insufficient_quota / credit_balance_exhausted`; therefore, no successful API output or token usage was captured. I would refine the system prompt for the guest-review project by explicitly defining the task, expected output format and sentiment categories so that responses are more consistent and easier to process programmatically.
+
+**Status:** Code prepared and tested up to the API request; live execution blocked by API account credit.
+
+## L3.2 — First OpenAI API Call
+
+Application to organisation: Tool calling could allow an AI component to retrieve approved internal information through controlled Python functions. Read-only tools could be used for information retrieval, while actions that modify records or have business impact could require additional validation or human approval.
+
+### Module 5 — Unit 3 — Lesson 3
+
+- Estimated monthly reviews: approximately 333
+- Estimated monthly AI cost: approximately $0.01
+- Token reduction techniques:
+  - Output length control using a Positive/Negative-only response and low `max_tokens`.
+  - System prompt discipline by keeping the classification instructions concise.
+- Architecture decision: to be decided with instructor.
+
+The proposed system will analyse future Booking.com guest reviews as they are received and return a simple Positive/Negative classification. Synchronous processing is currently proposed because the output is small, the estimated workload is approximately 11 reviews per day, and the sentiment result may be useful shortly after a new review arrives. The main trade-offs are API latency, failures and rate limits, which will need to be handled in the production implementation. If review volume increases significantly or immediate results are no longer required, asynchronous queue or batch processing could be considered.
