@@ -426,3 +426,9 @@ Application to organisation: Tool calling could allow an AI component to retriev
 - Architecture decision: to be decided with instructor.
 
 The proposed system will analyse future Booking.com guest reviews as they are received and return a simple Positive/Negative classification. Synchronous processing is currently proposed because the output is small, the estimated workload is approximately 11 reviews per day, and the sentiment result may be useful shortly after a new review arrives. The main trade-offs are API latency, failures and rate limits, which will need to be handled in the production implementation. If review volume increases significantly or immediate results are no longer required, asynchronous queue or batch processing could be considered.
+
+### MOdule 5 unit 4 Lesson 2 — Risk and Defensive Architecture
+
+- **Highest-severity risk:** Prompt injection through commit message content.
+- **Control:** `validator.py` detects known prompt-injection patterns and rejects the input before it reaches the LLM.
+- **Something I had not previously considered:** A production AI system needs to account for failures beyond incorrect model output, including API rate limits, model availability, unexpected costs and malicious content.

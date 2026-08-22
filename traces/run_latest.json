@@ -1,22 +1,5 @@
 {
-  "session_id": "e6e2f9a0",
-  "started_at": "2026-08-18T22:10:47.329986",
-  "events": [
-    {
-      "step": 1,
-      "timestamp": "2026-08-18T22:10:47.330050",
-      "event_type": "call_start",
-      "detail": "model=gpt-4o-mini",
-      "tokens_used": null,
-      "cost_usd": null
-    },
-    {
-      "step": 2,
-      "timestamp": "2026-08-18T22:10:49.379156",
-      "event_type": "error",
-      "detail": "RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-      "tokens_used": null,
-      "cost_usd": null
-    }
-  ]
+  "session_id": "9220a0e0",
+  "started_at": "2026-08-20T22:44:01.335633",
+  "events": []
 }
